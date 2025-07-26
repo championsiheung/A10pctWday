@@ -1,0 +1,436 @@
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Freesentation-9Black', '맑은 고딕', sans-serif;
+  background-color: #35374b;
+  color: #fff;
+}
+
+h1 {
+  font-size: 36px;
+  color: #f5bc2b;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.subtext {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#coupons-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.coupon-box {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto 5px auto;
+  background-color: #35374b;
+  border: 4px solid #35374b;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+}
+
+.coupon-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: auto;
+}
+.expire-label {
+  color: #ffffff;  /* 유효기간 색 */
+  font-weight: bold;
+}
+
+.dday-label {
+  color: #ddb6b6;  /* D-Day 색 */
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+#expire-info {
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  margin-top: -5px;
+}
+
+#note-area {
+  font-size: 15px;
+  max-width: 60vw;
+  padding: 0 10px;
+  color: #000000;
+  text-align: left;    /* 왼쪽 정렬 */
+  margin-left: 0;      /* 좌측 마진 제거 */
+  margin-right: auto;  /* 우측 마진 유지 */
+  margin-top: 10px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+a, a:link, a:visited, a:hover, a:active { /* 전화번호 색 덮기 */
+  color: #000000;
+  text-decoration: none;
+}
+
+.social-links {
+  max-width: 1000px;      /* coupon-box와 동일 */
+  margin: 10px auto 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  /* 기본 입체감 */
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2), 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transform: scale(1); /* 기본 크기 */
+}
+
+/* 🖱️ 마우스 오버 시: 살짝 뜨는 느낌 */
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.4);
+  }
+
+/* 👇 클릭 시: 가운데로 살짝 눌리는 느낌 */
+  .btn:active {
+  transform: scale(0.96);
+  -shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.insta-btn {
+  background: linear-gradient(to bottom, #fcbfd2, #fa8bb0);  /* 위쪽 밝고 아래 어두운 이중 그라데이션 */
+  color: rgb(41, 38, 38) !important;
+  padding: 20px 24px;
+  border: 1px solid #e56f97;             /* 테두리 강조 */
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),   /* 내부 하이라이트 (빛 효과) */
+    0 4px 8px rgba(0, 0, 0, 0.25);             /* 바깥 입체 그림자 */
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+}
+.insta-btn:hover {
+  background: linear-gradient(to bottom, #fa8bb0, #fcbfd2);  /* 반전된 그라데이션 */
+  box-shadow: 
+    inset 0 4px 8px rgba(255, 255, 255, 0.5),   /* 더 강한 내부 하이라이트 */
+    0 6px 12px rgba(0, 0, 0, 0.3);             /* 더 깊은 바깥 입체 그림자 */
+}
+
+.naver-btn {
+  background: linear-gradient(to bottom, #a8f4c3, #17df71);  /* 밝은 초록 → 네이버 그린 */
+  color: rgb(41, 38, 38) !important;
+  padding: 20px 24px;
+  border: 1px solid #14c55e;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+.naver-btn:hover {
+  background: linear-gradient(to bottom, #17df71, #a8f4c3);  /* 반전된 그라데이션 */
+  box-shadow:
+    inset 0 4px 8px rgba(255, 255, 255, 0.5),
+    0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navertalktalk-btn {
+  background: linear-gradient(to bottom, #ffffff, #ffffff);  /* 순백 → 옅은 회색 */
+  color: rgb(41, 38, 38) !important;
+  padding: 20px 24px;
+  border: 1px solid #cccccc;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.6),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+.navertalktalk-btn:hover {
+  background: linear-gradient(to bottom, #ffffff, #ffffff);  /* 반전된 그라데이션 */
+  box-shadow:
+    inset 0 4px 8px rgba(255, 255, 255, 0.8),
+    0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* 모바일 전용 */
+@media (max-width: 480px) {
+  .coupon-box {
+    max-width: 95vw;
+    padding: 10px;
+    min-height: auto;
+  }
+  .coupon-img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
+  #note-area {
+    font-size: 12px;
+    max-width: 60vw;
+    padding: 0 10px;
+    font-weight: left;
+    color: #000000;
+  }
+  .button-container { 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    gap: 10px; 
+    width: 250vw;               /* 쿠폰 박스와 너비 맞춤 */ 
+    padding: 0 10px; 
+    margin: 10px auto 0; 
+    box-sizing: border-box; 
+  } 
+}
+
+/* 기존 스타일 유지 */
+#info-toggle {
+  position: fixed; /* 화면에 고정 위치, 스크롤해도 움직이지 않음 */              
+  right: 0; /* 화면 오른쪽 끝에 붙음 */                     
+  top: 7%;  /* 화면 위에서부터 7% 위치에 배치 */                   
+  transform: translateY(-50%);  /* 자신 높이의 50%만큼 위로 이동 (즉, 기준점이 중앙으로 이동) */ 
+  background-color: #666a91;   /* 배경색을 짙은 보라빛 회색으로 지정 */   
+  color: #ffffff;   /* 글자색을 흰색으로 지정 */             
+  padding: 30px 20px;  /* 위아래 30px, 좌우 20px 안쪽 여백 */          
+  border-radius: 10px 0 0 10px; /* 좌측 위, 좌측 아래 모서리를 둥글게 (10px 반경) */
+  font-size: 30px;  /* 글자 크기를 22px로 설정 */             
+  font-weight: bold;  /* 글자 두껍게 설정 */            
+  cursor: pointer;  /* 마우스 올리면 손가락 모양으로 변경 */             
+  z-index: 999; /* 다른 요소보다 위에 표시 (겹침 우선순위) */                 
+  transition: background-color 0.3s, right 0.3s; /* 배경색 변경 시 0.3초 동안 부드럽게 변함 */
+  /* 깜빡임 애니메이션 추가 */
+  animation: blinkYellow 1.5s infinite;
+}
+
+/* 노란색 깜빡임 애니메이션 */
+@keyframes blinkYellow {
+0%, 100% {
+  background-color: #666a91;
+}
+50% {
+  background-color: yellow;
+  color: black; /* 노란 배경에 글자색 검정으로 변경 */
+  }
+}
+
+#info-toggle:hover {
+  background-color: #ffdd33;
+}
+#info-toggle.active {
+  background-color: #ffffff !important; /* 클릭 후 활성화된 상태 */
+  color: #000; /* 글자색도 검정으로 바꾸면 더 잘 보임 */
+}
+
+/* 매장 안내창 */
+#store-info {
+  position: fixed;
+  right: -720px;
+  top: 0;
+  width: 680px;
+  height: 100%;
+  background-color: #ffffff;
+  color: #333;
+  padding: 0px 20px 20px 20px; /* 위쪽 패딩 10px로 줄임 */
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 998;
+  font-family: 'BM Jua', sans-serif;
+  overflow-y: auto;
+  border-radius: 20px 0 0 20px;
+}
+
+/* 박스 오른쪽 상단에 로고 고정 */
+#store-logo {
+  position: absolute;
+  bottom: 20px;    /* 아래에서 20px */
+  right: 30px;  /* 오른쪽에서 30px */
+  width: 110px;  /* 크기 조절 가능 */
+  height: auto;
+  user-select: none;     /* 드래그·선택 방지 */
+  pointer-events: none;  /* 클릭 방지 */
+}
+
+#store-info h2 {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+/* 공통 기본 스타일 */
+#store-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+    
+.section-box {
+  background-color: #f7fdff;   /* 연한 배경색 */
+  border-radius: 15px;         /* 둥근 모서리 */
+  padding: 20px 15px;          /* 안쪽 여백 */
+  margin-bottom: 0;         /* 아래쪽 간격 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* 살짝 그림자 */
+  max-width: 700px;            /* 최대 너비 */
+  color: #333;                 /* 텍스트 색상 */
+  font-family: '맑은 고딕', sans-serif;
+  line-height: 1.6; /* 전체 줄 간격 */
+  font-weight: bold;
+}
+
+.section-box p strong {
+  font-size: 28px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* 리스트 항목 */
+.section-box ul {
+  padding-left: 0;  /* ul 기본 들여쓰기 제거 */
+  margin-left: 0;
+  list-style: none;
+}
+
+.section-box ul li {
+  font-size: 28px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 0.1em;
+  /* padding-left는 박스 패딩 + 번호넓이 만큼 */
+  padding-left: calc(15px + 1em); /* 15px 박스 왼쪽패딩 + 번호 영역 2em */
+  /* 번호를 기준으로 첫줄만 왼쪽으로 당기기 */
+  text-indent: calc(-1 * (1px + 1em));
+  white-space: normal;
+  word-break: keep-all;
+}
+
+/* 섹션 제목 */
+#store-info p {
+  margin: 0.8em 0 0.3em;
+  font-size: 35px;
+  font-weight: bold;
+  color: #113f6d; /* 진한 파란색 */
+}
+
+/* 운영시간 전용 스타일 */
+.time-section ul li {
+  font-size: 28px;
+  margin-bottom: 0.3em;
+  text-indent: -1.5em;
+  padding-left: 1.5em;
+}
+
+/* 이용 안내 전용 스타일 */
+.notice-section ul li {
+  font-size: 28px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 0.5em;
+  padding-left: 1.7em;  /* 이모지+공백 만큼 */
+  text-indent: -1.7em;  /* 첫 줄만 앞으로 당김 */
+  white-space: normal; /* 공백 없애지 않도록 유지 */
+  word-break: keep-all;
+}
+    
+.holiday-label {
+  color: red;
+  font-weight: bold;
+}
+
+.weekday-label {
+  color: blue;
+  font-weight: bold;
+}
+
+/* 요금표 스타일 - 이용안내 스타일과 비슷하게 */
+#price-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px auto 30px auto;
+  max-width: 400px;
+  font-family: '맑은 고딕', sans-serif;
+  color: #444;
+}
+
+#price-list li {
+  font-size: 28px;
+  line-height: 1.5;
+  padding-left: 2.5em;       /* 숫자 아이콘 공간 확보 */
+  text-indent: -2.5em;      /* 숫자 아이콘 위치 조정 */
+  margin-bottom: 0.5em;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 마지막 항목 아래선 제거 */
+#price-list li:last-child {
+  border-bottom: none;
+}
+
+/* 문단 굵은선 */
+.divider {
+  border: none;
+  border-bottom: 3px solid #444;
+  margin: 8px 0;
+}
+

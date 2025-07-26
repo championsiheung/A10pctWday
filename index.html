@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>챔피언 시흥은계점 쿠폰</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="title-wrapper">
+    <h1 id="main-title">🎉 챔피언 시흥은계점 키즈카페에 오신 걸 환영해요! 😄</h1> 
+  </div>
+  <!-- 안내 메시지 -->
+  <p id="coupon-guide" class="subtext">
+    귀여운 쿠폰들이 기다리고 있어요💌<br>
+    현장에서 쿠폰을 사용하실 땐 꼭! <br>
+    <strong>휴대폰 캡쳐 또는 저장된 이미지가 아닌 <u>'실물 쿠폰'</u></strong>을 보여주세요~
+  </p>
+
+  <!-- 만료 메시지 -->
+  <p id="coupon-message" class="subtext"></p>
+
+  <!-- 쿠폰 이미지 위치 -->
+  <div id="coupons-container"></div>
+
+  <!-- 유효기간 및 남은시간 -->
+  <div id="expire-info" class="subtext"></div>
+
+  <!-- SNS 및 길찾기 -->
+  <div class="social-links">
+    <a href="https://www.instagram.com/champion_siheung/" target="_blank" class="btn insta-btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="인스타그램" width="50" style="vertical-align: middle; margin-right: 10px;">
+      인스타그램
+    </a>
+    <a href="https://map.naver.com/p/search/챔피언 시흥/place/1221821767?placePath=/feed..." target="_blank" class="btn naver-btn">
+      <img src="https://github.com/championsiheung/coupon_test/blob/main/네이버로고.png?raw=true" alt="네이버 N 로고" width="50" style="vertical-align: middle; margin-right: 10px;">
+      찾아오시는 길
+    </a>
+    <a href="https://talk.naver.com/ct/wp6itd5#nafullscreen" target="_blank" class="btn navertalktalk-btn">
+      <img src="https://github.com/championsiheung/coupon_test/blob/main/톡톡.png?raw=true" alt="문의 아이콘" width="50" style="vertical-align: middle; margin-right: 10px;">
+      톡톡 문의
+    </a> 
+  </div>
+
+  <!-- 매장 안내 패널 -->
+  <div id="info-toggle">◀</div>
+  <div id="store-info">
+    <img src="https://github.com/championsiheung/coupon_test/blob/main/로고.png?raw=true" alt="매장 로고" id="store-logo" draggable="false" />
+    <h2>📌 매장 안내</h2>
+
+    <p><strong>[운영시간]</strong></p>
+    <div class="section-box">
+      <ul class="time-section">
+        <li>⭐ 평일: 13:00~21:00</li>
+        <li>⭐ 주말&공휴일: 10:30~21:00</li>
+      </ul>
+    </div>
+
+    <p><strong>[이용 안내사항]</strong></p>
+    <div class="section-box">
+      <ul class="notice-section">
+        <li>⓵ 매주 월요일,화요일은 정기 휴무</li>
+        <li>⓶ 명절 당일 휴무</li>
+        <li>⓷ 공휴일에는 주말 요금제 및 운영시간 적용</li>
+        <li>⓸ 보호자 양말 착용 필수</li>
+        <li>⓹ 어린이 논슬립 양말 착용 권장</li>
+        <li>⓺ 외부음식물 반입금지</li>
+        <li>⓻ 어린이 키 150cm 초과 시 이용 제한</li>
+        <li>⓼ 아트 이용시 20분 시간 연장</li>
+        <li>⓽ 매장 내 카페 운영: 오후 7:30까지</li>
+        <li>⓾ 주차가능(칼라스빌딩 본 건물 주차장/퇴장 시 정산)</li>
+      </ul>
+    </div>
+
+    <p><strong>[이용금액표]</strong></p>
+    <div class="section-box">
+      <ul class="price-section">
+        <li><span class="holiday-label">🔴주말(공휴일)</span> 종일권 : <span>30,000원</span></li>
+        <li><span class="holiday-label">🔴주말(공휴일)</span> 3시간 : <span>22,000원</span></li>
+        <li><span class="holiday-label">🔴주말(공휴일)</span> 2시간 : <span>17,000원</span></li>
+        <li><span class="holiday-label">🔴주말(공휴일)</span> 1시간 : <span>11,000원</span></li>
+        <hr class="divider" />
+        <li><span class="weekday-label">🔵평일 할인</span> 종일권 : <span>29,000원</span></li>
+        <li><span class="weekday-label">🔵평일 할인</span> 3시간 : <span>21,000원</span></li>
+        <li><span class="weekday-label">🔵평일 할인</span> 2시간 : <span>16,000원</span></li>
+        <li><span class="weekday-label">🔵평일 할인</span> 1시간 : <span>10,000원</span></li>
+        <li>- 공통 보호자(음료포함): <span>7,000원</span></li>
+        <li>- 추가 10분(아이 1인당): <span>1,500원</span></li>
+        <hr class="divider" />
+        <li>- 다회권구매&예약&기타문의<br>📞<a href="tel:050713649056"> 0507-1364-9056</a></li>
+      </ul>
+    </div>
+
+    <div id="note-area">
+      *본 쿠폰은 '챔피언 시흥은계점'에서만 사용이 가능합니다.<br>
+      *본 쿠폰은 유효기간이 만료되면 사용 하실 수 없습니다.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
