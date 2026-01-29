@@ -1,6 +1,6 @@
 // 안내 패널 토글
 //TODO: 마감 날짜 및 시간 선택 변경/
-const expireDateStr = "2025-09-30";
+const expireDateStr = "2030-09-30";
 const expireTimeStr = "23:59:59";
 
 const coupons = [
